@@ -111,42 +111,40 @@ ORDER BY avg_order_value DESC
 LIMIT 10;  -- Top 10 for brevity
 
 /*
-| city 						| avy_order_value |
-|---------------------------|-----------------|
-| salto grande				|	6743.4		  |
-| pianco					|	2324.99		  |
-| nova esperanca do piria	|	2252.66		  |
-| engenheiro navarro		|	2106.55		  |
-| agrestina					|	2066.34		  |
-| itaparica					|	1883.6		  |
-| mariental					|	1867.85 	  |
-| loreto					|	1643.64  	  |
-| ibitita					|	1534.58		  |
-| caputira					|	1511.32		  |
-
+| city 						| avy_order_value | customer_state|
+|---------------------------|-----------------|---------------|
+| salto grande				|	6743.4		  |		SP		  |
+| pianco					|	2324.99		  |		PB		  |
+| nova esperanca do piria	|	2252.66		  |		PA		  |
+| engenheiro navarro		|	2106.55		  |		MG		  |
+| agrestina					|	2066.34		  |		PE		  |
+| triunfo					|	1985.7		  |		PB		  |	
+| itaparica					|	1883.6		  |		BA		  |
+| mariental					|	1867.85 	  |		PR		  |
+................. SO ON
 */
 
 -- Percentage of Customers Who Have Churned:
 
-SELECT (SUM(churn_flag) / COUNT(*)) * 100 AS churn_percentage
+SELECT (SUM(CASE WHEN churn_flag = 1 THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS churn_percentage
 FROM customers;
 
--- 0 
+-- 80.4135115294496
 
 -- Join Sales and Marketing for Conversion Rate by Channel:
 
-SELECT m.channel, AVG(m.response_rate) AS avg_conversion
+SELECT m.channel, (SUM(m.conversions) * 1.0 / COUNT(DISTINCT m.customer_id)) AS conversion_rate
 FROM marketing m
-JOIN sales s ON m.customer_id = s.customer_id
+LEFT JOIN sales s ON m.customer_id = s.customer_id
 GROUP BY m.channel;
 
 /*
 | channel      | 	avg_conversion |
 |--------------|-------------------|
-| Affiliate	   | 0.334643712001792 |
-| Email		   | 0.332791220908667 |
-| SMS		   | 0.328178532022117 |
-| Social Media | 0.329665134903524 |
+| Affiliate	   | 0.387096774193548 |
+| Email		   | 0.347826086956522 |
+| SMS		   | 0.362903225806452 |
+| Social Media | 0.416058394160584 |
 
 */
 
