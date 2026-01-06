@@ -1,3 +1,9 @@
+/*
+A. SQL & DATA EXTRACTION (CONCEPTUAL OR VIA SQLITE)
+------------------------------------------------------------------
+------------------------------------------------------------------
+*/
+
 -- Customers table 
 CREATE TABLE customers (
     customer_id VARCHAR(50) PRIMARY KEY,
@@ -57,9 +63,12 @@ CREATE TABLE reviews (
     review_comment_message TEXT
 );
 
--- Load data from CSVs
+-- Load CSVs files (datasets)
 
--- Retrieve Top 10 Customers by Total Spend:
+
+-- BASIC SQL OPERATIONS (having the output as well in comment)
+--************************************************************
+-- 1. Retrieve Top 10 Customers by Total Spend:
 
 SELECT customer_id, total_spent
 FROM customers
@@ -82,7 +91,7 @@ LIMIT 10;
 
 */
 
--- Identify Top 5 Product Categories by Revenue:
+-- 2. Identify Top 5 Product Categories by Revenue:
 
 SELECT category_english, SUM(total_price) AS revenue
 FROM sales
@@ -101,14 +110,14 @@ LIMIT 5;
 
 */
 
--- Average Order Value per City/State:
+-- 3. Average Order Value per City/State:
 
 SELECT c.customer_city AS city, AVG(s.total_price) AS avg_order_value
 FROM sales s
 JOIN customers c ON s.customer_id = c.customer_id
 GROUP BY c.customer_city
 ORDER BY avg_order_value DESC
-LIMIT 10;  -- Top 10 for brevity
+LIMIT 10;  
 
 /*
 | city 						| avy_order_value | customer_state|
@@ -124,14 +133,16 @@ LIMIT 10;  -- Top 10 for brevity
 ................. SO ON
 */
 
--- Percentage of Customers Who Have Churned:
+-- 4. Determine the percentage of customers who have churned (churn_flag = 1)
 
 SELECT (SUM(CASE WHEN churn_flag = 1 THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS churn_percentage
 FROM customers;
 
--- 80.4135115294496
+/*
+80.4135115294496
+*/
 
--- Join Sales and Marketing for Conversion Rate by Channel:
+-- 5. Join sales and marketing tables to find conversion rate by channel
 
 SELECT m.channel, (SUM(m.conversions) * 1.0 / COUNT(DISTINCT m.customer_id)) AS conversion_rate
 FROM marketing m
@@ -149,7 +160,7 @@ GROUP BY m.channel;
 */
 
 -- DETECT INVALID/MISSING VALUES WITH SQL QUERIES :
-------------------------------------------------------------------------------------------
+--*************************************************
 
 -- Check nulls in key columns
 SELECT COUNT(*) FROM customers 
