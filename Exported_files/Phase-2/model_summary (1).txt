@@ -1,0 +1,5 @@
+Best Model: XGBoost
+Best Params: {'learning_rate': 0.1, 'max_depth': 4, 'n_estimators': 200, 'reg_alpha': 0.1, 'reg_lambda': 1}
+Test F1: 0.9947687453292369
+Top Features: Recency, Frequency
+Insights: Target high-R customers.
