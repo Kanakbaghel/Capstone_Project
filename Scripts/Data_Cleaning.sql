@@ -112,10 +112,10 @@ LIMIT 5;
 
 -- 3. Average Order Value per City/State:
 
-SELECT c.customer_city AS city, AVG(s.total_price) AS avg_order_value
+SELECT c.customer_city,c.customer_state AS city, AVG(s.total_price) AS avg_order_value
 FROM sales s
 JOIN customers c ON s.customer_id = c.customer_id
-GROUP BY c.customer_city
+GROUP BY c.customer_city,c.customer_state
 ORDER BY avg_order_value DESC
 LIMIT 10;  
 
@@ -130,7 +130,8 @@ LIMIT 10;
 | triunfo					|	1985.7		  |		PB		  |	
 | itaparica					|	1883.6		  |		BA		  |
 | mariental					|	1867.85 	  |		PR		  |
-................. SO ON
+| belem 					| 	1679.6733	  | 	AL		  |
+| santa cecilia				| 	1667.1		  |		PB		  |
 */
 
 -- 4. Determine the percentage of customers who have churned (churn_flag = 1)
