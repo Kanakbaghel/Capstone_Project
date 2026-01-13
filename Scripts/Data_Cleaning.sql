@@ -1,5 +1,5 @@
 /*
-A. SQL & DATA EXTRACTION (CONCEPTUAL OR VIA SQLITE)
+A. SQL & DATA EXTRACTION 
 ------------------------------------------------------------------
 ------------------------------------------------------------------
 */
@@ -63,7 +63,7 @@ CREATE TABLE reviews (
     review_comment_message TEXT
 );
 
--- Load CSVs files (datasets)
+-- Load all five CSVs files (datasets)
 
 
 -- BASIC SQL OPERATIONS (having the output as well in comment)
@@ -172,7 +172,7 @@ WHERE payment_type IS NULL;  -- 3 nulls
 SELECT COUNT(*) FROM products 
 WHERE category_english IS NULL;  -- 618 nulls
 
--- Check for invalid values (e.g., negative prices)
+-- Check for invalid values (e.g. negative prices)
 SELECT COUNT(*) 
 FROM sales WHERE price < 0;  -- Should be 0
 SELECT COUNT(*) 
