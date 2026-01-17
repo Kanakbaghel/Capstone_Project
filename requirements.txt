@@ -16,7 +16,7 @@ prophet==1.1.4  # For forecasting (formerly fbprophet)
 # Utilities (e.g., for saving models)
 joblib==1.3.2
 
-streamlit
+streamlit==1.28.1
 joblib
 pandas
 numpy
