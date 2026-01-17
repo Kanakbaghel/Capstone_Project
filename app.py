@@ -1,7 +1,26 @@
 import streamlit as st
+st.title("Test App")
+st.write("Hello, world!")
+
 import joblib
 import pandas as pd
 import numpy as np
+
+
+
+
+try:
+    model = joblib.load('Exported_files/Phase 2/Models/best_churn_model.pkl')
+    scaler = joblib.load('Exported_files/Phase 2/Models/scaler.pkl')
+    metadata = joblib.load('Exported_files/Phase 2/Models/feature_metadata.pkl')
+    st.success("Model loaded successfully!")
+except Exception as e:
+    st.error(f"Error loading model: {e}")
+    st.stop()
+
+st.title("RetailSmart Churn Prediction – MLOps App 🚀")
+# ... rest of your code
+
 
 # Load saved model and tools (paths for your repo: Exported_files/Phase 2/Models/)
 model = joblib.load('Exported_files/Phase 2/Models/best_churn_model.pkl')
