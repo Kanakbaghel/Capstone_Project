@@ -8,7 +8,7 @@ model = joblib.load('Exported_files/Phase 2/Models/best_churn_model.pkl')
 scaler = joblib.load('Exported_files/Phase 2/Models/scaler.pkl')
 metadata = joblib.load('Exported_files/Phase 2/Models/feature_metadata.pkl')
 
-st.title("RetailSmart Churn Prediction – MLOps App 🚀")
+st.title("RetailSmart Churn Prediction – MLOps App")
 st.write("Enter customer details to predict churn risk.")
 
 # Input fields (match your 23 features – add more sliders if needed)
