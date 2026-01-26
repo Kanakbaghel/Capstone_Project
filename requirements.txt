@@ -1,24 +1,100 @@
-# Core data manipulation and analysis
-pandas==1.5.3
+# RetailSmart Analytics Dashboard - Requirements
+# Python 3.8+ required
+# Last updated: January 2026
+
+# ============================================
+# CORE DEPENDENCIES (Required for Dashboard)
+# ============================================
+
+# Web Framework
+streamlit==1.29.0
+
+# Data Processing
+pandas==2.0.3
 numpy==1.24.3
 
 # Visualization
-matplotlib==3.7.1
+plotly==5.18.0
+
+# Date/Time Utilities
+python-dateutil==2.8.2
+
+# ============================================
+# OPTIONAL: For Loading Real Data
+# ============================================
+# Uncomment if using actual database or ML models
+
+# Database Connectivity
+mysql-connector-python==8.1.0
+sqlalchemy==2.0.20
+pymongo==4.6.0
+
+# Machine Learning (if using Phase 2/3 outputs)
+scikit-learn==1.3.0
+xgboost==1.7.6
+lightgbm==4.0.0
+
+# Time Series Analysis (if using forecasting)
+statsmodels==0.14.0
+prophet==1.1.4
+
+# Additional Visualization
+matplotlib==3.7.2
 seaborn==0.12.2
 
-# Machine learning and modeling
-scikit-learn==1.3.0
+# ============================================
+# DEVELOPMENT DEPENDENCIES (Optional)
+# ============================================
+# Uncomment for development/testing
 
-# Time-series and advanced analytics
-statsmodels==0.14.0
-prophet==1.1.4  # For forecasting (formerly fbprophet)
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
 
-# Utilities (e.g., for saving models)
-joblib==1.3.2
+# Code Quality
+black==23.12.1
+flake8==7.0.0
+pylint==3.0.3
 
-streamlit==1.28.1
-joblib
-pandas
-numpy
-scikit-learn
-xgboost
+# Jupyter Notebooks
+jupyter==1.0.0
+notebook==7.0.7
+ipykernel==6.27.1
+
+# ============================================
+# DEPLOYMENT SPECIFIC
+# ============================================
+# These may be needed for certain platforms
+
+# For Heroku deployment
+gunicorn==21.2.0
+
+# For environment variables
+python-dotenv==1.0.0
+
+# ============================================
+# SECURITY & UTILITIES
+# ============================================
+
+# Environment management
+python-dotenv==1.0.0
+
+# HTTP requests (if fetching external data)
+requests==2.31.0
+
+# ============================================
+# NOTES
+# ============================================
+# - Keep this file minimal for faster deployment
+# - Only uncomment packages you actually use
+# - Pin versions to ensure reproducibility
+# - Test locally before deploying
+#
+# Installation:
+pip install -r requirements.txt
+#
+# Update all packages:
+pip install -r requirements.txt --upgrade
+#
+# Generate current environment:
+pip freeze > requirements.txt
