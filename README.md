@@ -11,6 +11,8 @@
 
 Hey there, data enthusiast! Imagine transforming raw, messy data into a powerhouse of business intelligence that predicts customer churn, forecasts sales, and drives strategic decisions. That's exactly what this capstone project does for RetailSmart, a bustling e-commerce retailer. Buckle up as we dive into a comprehensive journey from data wrangling to dazzling dashboards—frankly speaking, this isn't just analysis; it's a game-changer for retail success.
 
+<img width="1163" height="673" alt="Screenshot 2026-01-27 143729" src="https://github.com/user-attachments/assets/337dc9dd-499e-4ba6-90a1-00fb823fc513" />
+
 This project is your hands-on playground for mastering data science in a real-world context. We'll tackle everything from scrubbing datasets to building predictive models and crafting interactive visualizations. Whether you're a budding analyst or a seasoned pro, you'll walk away with skills that scream "advanced" and insights that shout "actionable." Let's get started—your data adventure awaits!
 
 ## Table of Contents
