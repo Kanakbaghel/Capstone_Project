@@ -11,6 +11,8 @@
 
 Hey there, data enthusiast! Imagine transforming raw, messy data into a powerhouse of business intelligence that predicts customer churn, forecasts sales, and drives strategic decisions. That's exactly what this capstone project does for RetailSmart, a bustling e-commerce retailer. Buckle up as we dive into a comprehensive journey from data wrangling to dazzling dashboards—frankly speaking, this isn't just analysis; it's a game-changer for retail success.
 
+▶️ **Watch the demo on YouTube:** [RetailSmart Power BI Dashboard Demo](https://youtu.be/BZorOdLPVn0?si=uTCnacto9Oi9kpqg)
+
 To watch the demo video of the RetailSmart dashboard, **click on the image below**:
 
 [![Dashboard Screenshot](https://github.com/user-attachments/assets/337dc9dd-499e-4ba6-90a1-00fb823fc513)](https://github.com/Kanakbaghel/Capstone_Project/releases/tag/v1.0-dashboard-demo)
